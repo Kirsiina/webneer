@@ -19,7 +19,7 @@
           </label>
         </div>
         <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
-        <p class="text-center small"><a href="#">Did you forget your password?</a> Or do you want to <a href="#">register</a>?</p>
+        <p class="text-center small"><a href="#">Did you forget your password?</a> Or do you want to <a href="register.php">register</a>?</p>
       </form>
 
     </div>
