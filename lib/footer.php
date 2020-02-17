@@ -4,19 +4,19 @@
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
             <li class="list-inline-item">
-              <a class="footer-link" href="index.html">Home</a>
+              <a class="footer-link" href="index.php">Home</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a class="footer-link" href="webhosting.html">Web hosting</a>
+              <a class="footer-link" href="webhosting.php">Web hosting</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a class="footer-link" href="webdesign.html">Web design</a>
+              <a class="footer-link" href="webdesign.php">Web design</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a class="footer-link"a href="contact.html">Contact us</a>
+              <a class="footer-link"a href="contact.php">Contact us</a>
             </li>
           </ul>
           <p class="small mb-4 mb-lg-0 text-white">&copy; Webneer 2020. All Rights Reserved.<br>Disclaimer! This is not real company, this is only used for our studies.</p>
@@ -42,7 +42,7 @@
           </ul>
         </div>
       </div>
-      <div class="text-center"><p class="small">Log in as <a href="login.html">admin</a></p></div>
+      <div class="text-center"><p class="small">Log in as <a href="login.php">admin</a></p></div>
     </div>
   </footer>
 

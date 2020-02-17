@@ -35,15 +35,15 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Web hosting
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="webhosting.html#details">Product details</a>
-                  <a class="dropdown-item" href="webhosting.html#pricing">Pricing</a>
+                  <a class="dropdown-item" href="webhosting.php#details">Product details</a>
+                  <a class="dropdown-item" href="webhosting.php#pricing">Pricing</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -51,8 +51,8 @@
                   Web design
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="webdesign.html#details">Product details</a>
-                  <a class="dropdown-item" href="webdesign.html#pricing">Pricing</a>
+                  <a class="dropdown-item" href="webdesign.php#details">Product details</a>
+                  <a class="dropdown-item" href="webdesign.php#pricing">Pricing</a>
                 </div>
               </li>
               <li class="nav-item">
