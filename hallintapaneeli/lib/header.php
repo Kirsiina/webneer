@@ -23,6 +23,4 @@ include '../lib/config.php';
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://kit.fontawesome.com/5f0207882f.js"></script>
-
   </head>

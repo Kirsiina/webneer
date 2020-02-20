@@ -1,7 +1,7 @@
 <?php
 include 'lib/header.php';
 
-$sitename = "Dashboard";
+$sitename = "Accounts";
 ?>
 
 <body>
