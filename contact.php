@@ -93,7 +93,7 @@
                     Please send us a contact request and we will contact you very soon.<br>
 
                   </p>
-                  <form>
+                  <form action="" method="post">
 
                     <div class="form-group">
                       <label for="firstname">First name</label>
@@ -115,6 +115,20 @@
                     </div>
                     <button type="submit" class="btn">Submit</button>
                   </form>
+
+                  <?php
+
+                  /*if (isset($_POST['firstname']) {
+                    $kysely = "insertfkgjdlkg";
+                    $laheta = mysqli_query($kysely, $yhteys);
+
+
+                  }
+                  else {
+                  echo 'Jotain meni pieleen';
+                }*/
+
+                   ?>
 
               </div>
           </div>
