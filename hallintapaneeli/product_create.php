@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             if(mysqli_stmt_execute($stmt)){
                 
-                header("location: product.php");
+                header("location: products.php");
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -100,7 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="help-block"><?php echo $hinta_err;?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="product.php" class="btn btn-default">Cancel</a>
+                        <a href="products.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
             </div>        

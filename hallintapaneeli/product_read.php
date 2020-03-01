@@ -64,7 +64,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                         <label>Price</label>
                         <p class="form-control-static"><?php echo $row["hinta"]; ?></p>
                     </div>
-                    <p><a href="product.php" class="btn btn-primary">Back</a></p>
+                    <p><a href="products.php" class="btn btn-primary">Back</a></p>
                 </div>
             </div>        
         </div>

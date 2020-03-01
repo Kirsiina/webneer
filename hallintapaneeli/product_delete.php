@@ -19,7 +19,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         
         if(mysqli_stmt_execute($stmt)){
             
-            header("location: product.php");
+            header("location: products.php");
             exit();
         } else{
             echo "Oops! Something went wrong.";
@@ -60,7 +60,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <p>Are you sure you want to destroy this product?</p><br>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-danger">
-                                <a href="product.php" class="btn btn-default">No</a>
+                                <a href="products.php" class="btn btn-default">No</a>
                             </p>
                         </div>
                     </form>
