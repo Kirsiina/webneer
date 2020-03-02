@@ -12,7 +12,16 @@
         </a>
     </div>
 
-    <ul class="list-unstyled components" style="">
+    <ul class="list-unstyled components">
+
+        <hr>
+        <div class="px-2" style="color:white">
+            <img class="rounded-circle float-left m-2" width="45" height="45" src="../img/profiilikuva.png" alt="Placeholder image" >
+            <div class="align-middle">
+                User Name<br> <!-- TODO: Get username/image from session -->
+                <span><a href="./profile.php">Profile</a> - <a href="./logout.php">Logout</a></span>
+            </div>
+        </div>
         <hr>
         <li class="<?php if($sitename == "Dashboard"){ echo 'active'; }  ?>">
             <a href="./dashboard.php">
