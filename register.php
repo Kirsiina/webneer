@@ -17,7 +17,7 @@
         $sahkoposti = $_POST['email'];
         $salasana = $_POST['password'];
 
-        $query = "INSERT INTO webneer_kayttajat (kayttajatunnus, salasana, oikeudet, sahkoposti) VALUES ('$kayttajatunnus', '".password_hash('$salasana', PASSWORD_DEFAULT, PASSWORD_BCRYPT)."', '2', '$sahkoposti')";
+        $query = "INSERT INTO webneer_kayttajat (kayttajatunnus, salasana, oikeudet, sahkoposti) VALUES ('$kayttajatunnus', '".password_hash('$salasana', PASSWORD_DEFAULT)."', '2', '$sahkoposti')";
         $result = mysqli_query($yhteys, $query);
 
         if ($result) {
