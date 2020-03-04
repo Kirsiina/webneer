@@ -110,30 +110,38 @@
                           $query = "INSERT INTO webneer_yhteydenottolomake(etunimi, sukunimi, aihe, lomake_txt, puhnro, sahkoposti) VALUES('$etunimi', '$sukunimi', '$aihe', '$lomake_txt', '$puhnro', '$sahkoposti')";
                           $result = mysqli_query($yhteys, $query);
 
+                          if($_POST["firstname"] !=null && $_POST["lastname"] !=null && $_POST["topic"] !=null && $_POST["message"] !=null && $_POST["phonenumber"] !=null && $_POST["email"]){
+                            echo '<div class="alert alert-success" role="alert">
+                            Your message was sent succesfully! We will contact you as soon as possible.
+                            </div>';
+                          }
+                          
+                         
+                          
                   }
 ?>
 
                     <div class="form-group">
                       <label for="firstname">First name</label>
-                      <input type="text" class="form-control" name="firstname" placeholder="">
+                      <input type="text" class="form-control" name="firstname" placeholder="" required>
                     </div>
                     <div class="form-group">
                       <label for="lastname">Last name</label>
-                      <input type="text" class="form-control" name="lastname" placeholder="">
+                      <input type="text" class="form-control" name="lastname" placeholder="" required>
                     </div>
                     <div class="form-group">
                       <label for="email">Email address</label>
-                      <input type="text" class="form-control" name="email" placeholder="">
+                      <input type="text" class="form-control" name="email" placeholder="" required>
                     </div>
 
                     <div class="form-group">
                       <label for="phonenumber">Phone number</label>
-                      <input type="text" class="form-control" name="phonenumber" placeholder="">
+                      <input type="text" class="form-control" name="phonenumber" placeholder="" required>
                     </div>
 
                     <div class="form-group">
                       <label for="topic">Topic</label>
-                      <input type="text" class="form-control" name="topic" placeholder="">
+                      <input type="text" class="form-control" name="topic" placeholder="" required>
                     </div>
 
                     <div class="form-group">
