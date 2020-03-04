@@ -1,4 +1,6 @@
-<?php include 'lib/header.php'; ?>
+<?php include 'lib/header.php'; 
+
+?>
 
   <div class="container custom">
     <div class="about-section">
@@ -93,42 +95,70 @@
                     Please send us a contact request and we will contact you very soon.<br>
 
                   </p>
-                  <form action="" method="post">
+                  <form action="contact.php" method="post">
+
+                  <?php
+                  if (isset($_REQUEST['submitbutton'])){
+                          $etunimi = $_POST['firstname'];
+                          $sukunimi = $_POST['lastname'];
+                          $aihe = $_POST['topic'];
+                          $lomake_txt = $_POST['message'];
+                          $puhnro = $_POST['phonenumber'];
+                          $sahkoposti = $_POST['email'];
+
+                  
+                          $query = "INSERT INTO webneer_yhteydenottolomake(etunimi, sukunimi, aihe, lomake_txt, puhnro, sahkoposti) VALUES('$etunimi', '$sukunimi', '$aihe', '$lomake_txt', '$puhnro', '$sahkoposti')";
+                          $result = mysqli_query($yhteys, $query);
+
+                  }
+?>
 
                     <div class="form-group">
                       <label for="firstname">First name</label>
-                      <input type="text" class="form-control" id="firstname" placeholder="">
+                      <input type="text" class="form-control" name="firstname" placeholder="">
                     </div>
                     <div class="form-group">
                       <label for="lastname">Last name</label>
-                      <input type="text" class="form-control" id="lastname" placeholder="">
+                      <input type="text" class="form-control" name="lastname" placeholder="">
                     </div>
                     <div class="form-group">
                       <label for="email">Email address</label>
-                      <input type="email" class="form-control" id="email" placeholder="">
+                      <input type="text" class="form-control" name="email" placeholder="">
                     </div>
 
+                    <div class="form-group">
+                      <label for="phonenumber">Phone number</label>
+                      <input type="text" class="form-control" name="phonenumber" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="topic">Topic</label>
+                      <input type="text" class="form-control" name="topic" placeholder="">
+                    </div>
 
                     <div class="form-group">
                       <label for="message">Message</label>
-                      <textarea class="form-control" id="message" rows="6"></textarea>
+                      <textarea class="form-control" name="message" rows="6"></textarea>
                     </div>
-                    <button type="submit" class="btn">Submit</button>
+                    <button type="submit" class="btn" name="submitbutton">Submit</button>
                   </form>
 
-                  <?php
+                 
+                  
+                
+              
 
-                  /*if (isset($_POST['firstname']) {
-                    $kysely = "insertfkgjdlkg";
+                  <!--/*if (isset($_POST['firstname']) {
+                    $kysely = "insert into jnejnejnefkgjdlkg";
                     $laheta = mysqli_query($kysely, $yhteys);
 
 
                   }
                   else {
                   echo 'Jotain meni pieleen';
-                }*/
+                }*/-->
 
-                   ?>
+                  
 
               </div>
           </div>
