@@ -107,8 +107,14 @@
                           $sahkoposti = $_POST['email'];
 
                   
-                          $query = "INSERT INTO webneer_yhteydenottolomake(etunimi, sukunimi, aihe, lomake_txt, puhnro, sahkoposti) VALUES('$etunimi', '$sukunimi', '$aihe', '$lomake_txt', '$puhnro', '$sahkoposti')";
-                          $result = mysqli_query($yhteys, $query);
+                          $sql = "INSERT INTO webneer_yhteydenottolomake(etunimi, sukunimi, aihe, lomake_txt, puhnro, sahkoposti) VALUES(?, ?, ?, ?, ?, ?)";
+                          $stmt = mysqli_prepare($yhteys, $sql);
+                          mysqli_stmt_bind_param($stmt, "ssssss", $etunimi, $sukunimi, $aihe, $lomake_txt, $puhnro, $sahkoposti);
+                          mysqli_stmt_execute($stmt);
+                          
+
+
+                          
 
                           if($_POST["firstname"] !=null && $_POST["lastname"] !=null && $_POST["topic"] !=null && $_POST["message"] !=null && $_POST["phonenumber"] !=null && $_POST["email"]){
                             echo '<div class="alert alert-success" role="alert">
@@ -116,6 +122,8 @@
                             </div>';
                           }
                           
+                          mysqli_stmt_close($stmt);
+                          mysqli_close($yhteys);
                          
                           
                   }
