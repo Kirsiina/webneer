@@ -15,7 +15,8 @@
       if (isset($_REQUEST['register_btn'])) {
         $kayttajatunnus = $_POST['username'];
         $sahkoposti = $_POST['email'];
-        $salasana = $_POST['password'];
+
+        $hash_salasana = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         $query_username = "SELECT * FROM webneer_kayttajat WHERE kayttajatunnus = '$kayttajatunnus'";
         $query_email = "SELECT * FROM webneer_kayttajat WHERE sahkoposti = '$sahkoposti'";
@@ -42,7 +43,7 @@
         }
 
         else {
-          $query = "INSERT INTO webneer_kayttajat (kayttajatunnus, salasana, oikeudet, sahkoposti) VALUES ('$kayttajatunnus', '".password_hash('$salasana', PASSWORD_DEFAULT)."', '2', '$sahkoposti')";
+          $query = "INSERT INTO webneer_kayttajat (kayttajatunnus, salasana, oikeudet, sahkoposti) VALUES ('$kayttajatunnus', '$hash_salasana', '2', '$sahkoposti')";
           $result = mysqli_query($yhteys, $query);
 
           echo    '<div class="alert alert-success alert-dismissible fade show" role="alert">

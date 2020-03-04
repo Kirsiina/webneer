@@ -7,7 +7,7 @@
 <!-- Sidebar -->
 <nav id="sidebar" class="">
     <div class="sidebar-header py-2">
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="../index.php">
             <img src="../img/logo.png" alt="">
         </a>
     </div>
@@ -18,8 +18,8 @@
         <div class="px-2" style="color:white">
             <img class="rounded-circle float-left m-2" width="45" height="45" src="../img/profiilikuva.png" alt="Placeholder image" >
             <div class="align-middle">
-                User Name<br> <!-- TODO: Get username/image from session -->
-                <span><a href="./profile.php">Profile</a> - <a href="./logout.php">Logout</a></span>
+                <?php echo $kayttajatunnus; ?><br> <!-- TODO: Get username/image from session -->
+                <span><a href="./profile.php">Profile</a> - <a href="../logout.php">Logout</a></span>
             </div>
         </div>
         <hr>

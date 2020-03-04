@@ -1,6 +1,7 @@
 <?php
 
 include '../lib/config.php';
+include 'auth.php';
 
 ?>
 
