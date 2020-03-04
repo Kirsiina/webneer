@@ -17,10 +17,34 @@
         $sahkoposti = $_POST['email'];
         $salasana = $_POST['password'];
 
-        $query = "INSERT INTO webneer_kayttajat (kayttajatunnus, salasana, oikeudet, sahkoposti) VALUES ('$kayttajatunnus', '".password_hash('$salasana', PASSWORD_DEFAULT)."', '2', '$sahkoposti')";
-        $result = mysqli_query($yhteys, $query);
+        $query_username = "SELECT * FROM webneer_kayttajat WHERE kayttajatunnus = '$kayttajatunnus'";
+        $query_email = "SELECT * FROM webneer_kayttajat WHERE sahkoposti = '$sahkoposti'";
 
-        if ($result) {
+        $result_username = mysqli_query($yhteys, $query_username);
+        $result_email = mysqli_query($yhteys, $query_email);
+
+        if (mysqli_num_rows($result_username) > 0) {
+          echo    '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <h4>Username is already taken</h4>
+                    Please try again with different username. Or did you <a href="#">forgot</a> your password?
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>';
+        } else if (mysqli_num_rows($result_email) > 0) {
+          echo    '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <h4>Email is already taken</h4>
+                    Did you <a href="#">forgot</a> your password?
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>';
+        }
+
+        else {
+          $query = "INSERT INTO webneer_kayttajat (kayttajatunnus, salasana, oikeudet, sahkoposti) VALUES ('$kayttajatunnus', '".password_hash('$salasana', PASSWORD_DEFAULT)."', '2', '$sahkoposti')";
+          $result = mysqli_query($yhteys, $query);
+
           echo    '<div class="alert alert-success alert-dismissible fade show" role="alert">
               			<h4>User account created successfully</h4>
                     Would you want to <a href="login.php">log in</a>?
@@ -28,14 +52,6 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
             			</div>';
-        } else {
-          echo    '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <h4>Something went wrong</h4>
-                    Please try again.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>';
         }
       }
     ?>
