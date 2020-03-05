@@ -43,8 +43,13 @@
         }
 
         else {
-          $query = "INSERT INTO webneer_kayttajat (kayttajatunnus, salasana, oikeudet, sahkoposti) VALUES ('$kayttajatunnus', '$hash_salasana', '2', '$sahkoposti')";
-          $result = mysqli_query($yhteys, $query);
+          $query = "INSERT INTO webneer_kayttajat (kayttajatunnus, salasana, oikeudet, sahkoposti) VALUES (?, ?, '2', ?)";
+          $stmt = mysqli_prepare($yhteys, $query);
+          mysqli_stmt_bind_param($stmt, 'sss', $kayttajatunnus, $hash_salasana, $sahkoposti);
+          mysqli_stmt_execute($stmt);
+
+          mysqli_stmt_close($stmt);
+          mysqli_close($yhteys);
 
           echo    '<div class="alert alert-success alert-dismissible fade show" role="alert">
               			<h4>User account created successfully</h4>
