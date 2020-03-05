@@ -45,33 +45,53 @@ $row = mysqli_fetch_array($result);
 
     }
   ?>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" name="email" value="<?php echo $row['sahkoposti']; ?>">
+    <div class="form-group row">
+      <label for="email" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" name="email" value="<?php echo $row['sahkoposti']; ?>">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="firstname">First name</label>
-      <input type="text" class="form-control" name="firstname" value="<?php echo $row['etunimi']; ?>">
+
+    <div class="form-group row">
+      <label for="firstname" class="col-sm-2 col-form-label">First name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="firstname" value="<?php echo $row['etunimi']; ?>">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="lastname">Last name</label>
-      <input type="text" class="form-control" name="lastname" value="<?php echo $row['sukunimi']; ?>">
+
+    <div class="form-group row">
+      <label for="lastname" class="col-sm-2 col-form-label">Last name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="lastname" value="<?php echo $row['sukunimi']; ?>">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="address">Address</label>
-      <input type="text" class="form-control" name="address" value="<?php echo $row['lahiosoite']; ?>">
+
+    <div class="form-group row">
+      <label for="address" class="col-sm-2 col-form-label">Address</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="address" value="<?php echo $row['lahiosoite']; ?>">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="zipcode">Zip code</label>
-      <input type="text" class="form-control" name="zipcode" value="<?php echo $row['postinro']; ?>">
+
+    <div class="form-group row">
+      <label for="zipcode" class="col-sm-2 col-form-label">Zip code</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="zipcode" value="<?php echo $row['postinro']; ?>">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="city">City</label>
-      <input type="text" class="form-control" name="city" value="<?php echo $row['postitmp']; ?>">
+
+    <div class="form-group row">
+      <label for="city" class="col-sm-2 col-form-label">City</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="city" value="<?php echo $row['postitmp']; ?>">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="phonenumber">Phone number</label>
-      <input type="text" class="form-control" name="phonenumber" value="<?php echo $row['puhnro']; ?>">
+
+    <div class="form-group row">
+      <label for="phonenumber" class="col-sm-2 col-form-label">Phone number</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="phonenumber" value="<?php echo $row['puhnro']; ?>">
+      </div>
     </div>
 
     <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
