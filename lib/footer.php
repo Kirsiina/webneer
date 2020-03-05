@@ -42,7 +42,6 @@
           </ul>
         </div>
       </div>
-      <div class="text-center"><p class="small">Log in as <a href="login.php">admin</a></p></div>
     </div>
   </footer>
 
