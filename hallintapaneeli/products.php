@@ -58,15 +58,9 @@ $sitename = "Products";
                                         echo "<td>" . $row['tuotekuvaus'] . "</td>";
                                         echo "<td>" . $row['hinta'] . "</td>";
                                         echo "<td>"; //Ikonilinkit
-<<<<<<< HEAD
-                                            echo "<a href='product_read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='product_update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='product_delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
-=======
                                             echo "<a href='product_read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='fa fa-eye'></span></a>";
                                             echo "<a href='product_update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='fa fa-pencil'></span></a>";
                                             echo "<a href='product_delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='fa fa-trash'></span></a>";
->>>>>>> 0c0194874562fa47c938356bd22ce847eb48fe9b
                                         echo "</td>";
                                     echo "</tr>";
                                 }
