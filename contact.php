@@ -121,7 +121,7 @@
                             Your message was sent succesfully! We will contact you as soon as possible.
                             </div>';
                           }
-                          
+
                           mysqli_stmt_close($stmt);
                           mysqli_close($yhteys);
                          
@@ -164,16 +164,7 @@
                 
               
 
-                  <!--/*if (isset($_POST['firstname']) {
-                    $kysely = "insert into jnejnejnefkgjdlkg";
-                    $laheta = mysqli_query($kysely, $yhteys);
-
-
-                  }
-                  else {
-                  echo 'Jotain meni pieleen';
-                }*/-->
-
+                
                   
 
               </div>

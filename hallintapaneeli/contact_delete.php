@@ -1,25 +1,24 @@
 <?php
 include 'lib/header.php';
 
-$sitename = "DeleteProduct";
+$sitename = "DeleteContact";
 
 
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     
     
-    $sql = "DELETE FROM webneer_tuote WHERE id = ?";
+    $sql = "DELETE FROM webneer_yhteydenottolomake WHERE id = ?";
     
     if($stmt = mysqli_prepare($yhteys, $sql)){
         
-        mysqli_stmt_bind_param($stmt, "i", $param_id);
+        $id=$_POST["id"];
+        mysqli_stmt_bind_param($stmt, "i", $id);
         
-        
-        $param_id = trim($_POST["id"]);
         
         
         if(mysqli_stmt_execute($stmt)){
             
-            header("location: products.php");
+            header("location: feedback.php");
             exit();
         } else{
             echo "Oops! Something went wrong.";
@@ -60,7 +59,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <p>Are you sure you want to destroy this product?</p><br>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-danger">
-                                <a href="products.php" class="btn btn-default">No</a>
+                                <a href="feedback.php" class="btn btn-default">No</a>
                             </p>
                         </div>
                     </form>
