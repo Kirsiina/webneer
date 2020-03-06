@@ -7,7 +7,7 @@ $sitename = "Feedback";
 if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){  
     $sql = "SELECT * FROM webneer_tuote WHERE id = ?";
     
-    if($stmt = mysqli_prepare($link, $sql)){
+    if($stmt = mysqli_prepare($yhteys, $sql)){
         
         mysqli_stmt_bind_param($stmt, "i", $param_id); 
         $param_id = trim($_GET["id"]);
@@ -32,7 +32,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     }
     mysqli_stmt_close($stmt);
     
-    mysqli_close($link);
+    mysqli_close($yhteys);
 } else{
     header("location: error.php");
     exit();
