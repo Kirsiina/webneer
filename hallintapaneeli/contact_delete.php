@@ -51,12 +51,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>Destroy Product</h1>
+                        <h1>Delete contact request from the list</h1>
                     </div>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="">
                             <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>"/>
-                            <p>Are you sure you want to destroy this product?</p><br>
+                            <p>Are you sure you want to delete this contact request?</p><br>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-danger">
                                 <a href="feedback.php" class="btn btn-default">No</a>

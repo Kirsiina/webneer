@@ -3,7 +3,17 @@ include 'lib/header.php';
 
 $sitename = "Feedback";
 ?>
-
+<style type="text/css">
+        
+        .page-header h2{
+            margin-top: 0;
+        }
+        table tr td:last-child a{
+            margin-right: 30px;
+            
+        }
+        
+</style>
 <body>
 <div class="wrapper" >
 
@@ -30,11 +40,11 @@ $sitename = "Feedback";
                                 echo "<thead>";
                                     echo "<tr>";
                                         echo "<th>#</th>";
-                                        echo "<th>Etunimi</th>";
-                                        echo "<th>Sukunimi</th>";
-                                        echo "<th>Aihe</th>";
-                                        echo "<th>Viesti</th>";
-                                        echo "<th>Puhelinnumero</th>";
+                                        echo "<th>First name</th>";
+                                        echo "<th>Last name</th>";
+                                        echo "<th>Topic</th>";
+                                        echo "<th>Message</th>";
+                                        echo "<th>Phone number</th>";
                                         echo "<th>E-mail</th>";
                                     echo "</tr>";
                                 echo "</thead>";

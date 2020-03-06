@@ -53,30 +53,30 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>View Record</h1>
+                        <h1>View contact requests</h1>
                     </div>
                     <div class="form-group">
-                        <label>Etunimi</label>
+                        <label><b>First name</b></label>
                         <p class="form-control-static"><?php echo $row["etunimi"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Sukunimi</label>
+                        <label><b>Last name</b></label>
                         <p class="form-control-static"><?php echo $row["sukunimi"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Aihe</label>
+                        <label><b>Topic</b></label>
                         <p class="form-control-static"><?php echo $row["aihe"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Viesti</label>
+                        <label><b>Message</b></label>
                         <p class="form-control-static"><?php echo $row["lomake_txt"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Puhelinnumero</label>
+                        <label><b>Phone number</b></label>
                         <p class="form-control-static"><?php echo $row["puhnro"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>E-mail</label>
+                        <label><b>E-mail</b></label>
                         <p class="form-control-static"><?php echo $row["sahkoposti"]; ?></p>
                     </div>
                     <p><a href="feedback.php" class="btn btn-primary">Back</a></p>
