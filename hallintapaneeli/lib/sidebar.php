@@ -42,7 +42,7 @@
         <li class="<?php if($sitename == "Feedback"){ echo 'active'; }  ?>">
             <a href="./feedback.php">
             <i class="fa icon-fixed-width fa-comments-o" aria-hidden="true"></i>
-            Feedback</a>
+            Contact requests</a>
         </li>
 
     </ul>

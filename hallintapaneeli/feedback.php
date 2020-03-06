@@ -49,7 +49,7 @@ $sitename = "Feedback";
                                         echo "<td>" . $row['puhnro'] . "</td>";
                                         echo "<td>" . $row['sahkoposti'] . "</td>";
                                         echo "<td>"; //Ikonilinkit
-                                            echo "<a href='product_read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='fa fa-eye'></span></a>";
+                                            echo "<a href='contact_read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='fa fa-eye'></span></a>";
                                             
                                             echo "<a href='contact_delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='fa fa-trash'></span></a>";
                                             echo "</td>";
