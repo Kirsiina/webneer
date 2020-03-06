@@ -17,7 +17,7 @@ if(empty($input_number)){
 }
 
 if(empty($pageNumber_err)){
-    $sql = "INSERT INTO webneer_tilaus (kayttaja_id, tuote_id, summa, tilauspvm, paattymispvm) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO webneer_tilaus (kayttaja_id, tuote_id, summa, tilauspvm, paattymispvm) VALUES (?, ?, ?, NOW(), ?)";
 
     if($stmt = mysqli_prepare($yhteys, $sql)){
         mysqli_stmt_bind_param($stmt, "iidss", $param_kayttaja_id, $param_tuote_id, $param_summa, $param_tilauspvm. $param_paattymispvm);
