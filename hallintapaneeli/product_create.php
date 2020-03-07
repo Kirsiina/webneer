@@ -12,8 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $input_name = trim($_POST["tuotenimi"]);
     if(empty($input_name)){
         $tuotenimi_err = "Please enter a product name.";
-    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){ //Vain kirjaimet
-        $tuotenimi_err = "Please enter a valid name.";
+    
     } else{
         $tuotenimi = $input_name;
     }
