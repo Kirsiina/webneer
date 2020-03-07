@@ -2,39 +2,7 @@
 
 <?php
 
-$pageNumbers = "";
-$pageNumber_err = "";
-$productID = "";
 
-$input_number = trim($_POST["pageNumbers"]);
-if(empty($input_number)){
-    $pageNumber_err = "Please enter the number of pages.";
-}else if($input_number > 250){
-    $pageNumber_err = "Maximum pages is 250";
-}else{
-    $pageNumbers = $input_number;
-    $productID = 7;
-}
-
-if(empty($pageNumber_err)){
-    $sql = "INSERT INTO webneer_tilaus (kayttaja_id, tuote_id, summa, tilauspvm, paattymispvm) VALUES (?, ?, ?, NOW(), ?)";
-
-    if($stmt = mysqli_prepare($yhteys, $sql)){
-        mysqli_stmt_bind_param($stmt, "iidss", $param_kayttaja_id, $param_tuote_id, $param_summa, $param_tilauspvm. $param_paattymispvm);
-
-        $param_kayttaja_id = 100;
-        $param_tuote_id = 7;
-        $param_summa = $pageNumbers * 20;
-        $param_tilauspvm = '2009-04-30 10:09:00';
-        $param_paattymispvm = '2009-04-30 10:09:00';
-
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
-        mysqli_close($yhteys);
-
-}
-
-include 'lib/design_modal3.php';
 
 ?>
             <div class="container custom">
