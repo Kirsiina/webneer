@@ -54,7 +54,7 @@ $tuote_id = "";
                                         echo "<td>" . $row['tuotekuvaus'] . "</td>";
                                         echo "<td>" . $row['hinta'] . "</td>";
                                         echo "<td>"; //Button
-                                        echo "<a href='order_confirm.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='fa fa-shopping-cart'></span></a>";
+                                        echo "<a href='order_confirm.php?id=". $row['id'] ."' title='Buy Now' data-toggle='tooltip'><span class='fa fa-shopping-cart'></span></a>";
                                         echo "</td>";
                                         
                                     echo "</tr>";
