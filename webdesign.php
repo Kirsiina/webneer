@@ -58,7 +58,7 @@
                             <ul class="list-unstyled">
                                 <li class="">5 <span class="text-muted">pages</span></li>
                             </ul>
-                            <a name="" class="btn" href="#" role="button">Buy now</a>
+                            <a name="" class="btn" href="order.php" role="button">Buy now</a>
                         </div>
                     </div>
                     <div class="card text-center ">
@@ -71,7 +71,7 @@
                             <ul class="list-unstyled">
                                 <li class="">25 <span class="text-muted">pages</span></li>
                             </ul>
-                            <a name="" class="btn" href="#" role="button">Buy now</a>
+                            <a name="" class="btn" href="order.php" role="button">Buy now</a>
                         </div>
                     </div>
                     <div class="card text-center ">
@@ -84,7 +84,7 @@
                             <ul class="list-unstyled">
                                 <li class="">25+ <span class="text-muted">pages</span></li>
                             </ul>
-                            <a name="" class="btn" href="contact.html" data-toggle="modal" data-target="#modalForm" role="button">Contact us</a>
+                            <a name="" class="btn" href="contact.php" data-toggle="modal" data-target="#modalForm" role="button">Contact us</a>
 
                         </div>
                     </div>
