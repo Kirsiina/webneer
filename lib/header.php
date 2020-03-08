@@ -9,9 +9,10 @@ $kayttajatunnus = $_SESSION['kayttajatunnus'];
 $query = "SELECT * FROM webneer_kayttajat WHERE kayttajatunnus = '$kayttajatunnus'";
 
 $result = mysqli_query($yhteys, $query);
-$row = mysqli_fetch_array($result);
-
-} else {}
+  while ($row = mysqli_fetch_assoc($result)) {
+    $id = $row['id'];
+  }
+}
 
 ?>
 

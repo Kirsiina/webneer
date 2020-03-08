@@ -12,17 +12,6 @@
         
         $sql = "INSERT INTO webneer_tilaukset (kayttaja_id, tuote_id, summa, tilauspvm, paattymispvm) VALUES (?, ?, ?, ?, ?)";
         if($stmt = mysqli_prepare($yhteys, $sql)){
-            mysqli_stmt_bind_param($stmt, "iidss", $param_kayttaja_id, $param_tuote_id, $param_summa, $param_tilauspvm, $param_paattymispvm);
-
-            $sql2 = "SELECT id FROM webneer_kayttajat WHERE kayttajatunnus = ?";
-            $stmt2 = mysqli_prepare($yhteys, $sql2);
-            mysqli_stmt_bind_param($stmt2, "s", $param_kayttajatunnus); 
-            $param_kayttajatunnus = $_SESSION['kayttajatunnus'];
-            if(mysqli_stmt_execute($stmt2)){
-                $param_kayttaja_id = mysqli_stmt_get_result($stmt2);
-                
-            }
-            mysqli_stmt_close($stmt2);
 
             $sql3 = "SELECT hinta FROM webneer_tuote WHERE id = ?";
             $stmt3 = mysqli_prepare($yhteys, $sql3);
@@ -38,7 +27,8 @@
             $param_tilauspvm = $date;
             $param_paattymispvm = $endDate;
 
-    
+            mysqli_stmt_bind_param($stmt, "iidss", $id, $param_tuote_id, $param_summa, $param_tilauspvm, $param_paattymispvm);
+
             if(mysqli_stmt_execute($stmt)){
             
                 header("location: order.php");
