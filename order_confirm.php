@@ -15,11 +15,12 @@
 
             $sql3 = "SELECT hinta FROM webneer_tuote WHERE id = ?";
             $stmt3 = mysqli_prepare($yhteys, $sql3);
-            mysqli_stmt_bind_param($stmt3, "i", $param_tid); 
             $param_tid = $_POST["id"];
+            mysqli_stmt_bind_param($stmt3, "i", $param_tid);
             if(mysqli_stmt_execute($stmt3)){
-                $param_summa = mysqli_stmt_get_result($stmt3);
-                
+                $result3 = mysqli_stmt_get_result($stmt3);
+                $row = mysqli_fetch_array($result3);
+                $param_summa = $row['hinta'];
             }
             mysqli_stmt_close($stmt3);
 
