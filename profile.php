@@ -15,7 +15,10 @@ $row = mysqli_fetch_array($result);
 
   <h1>Welcome to your profile, <?php echo $row['kayttajatunnus']; ?></h1>
 
-  <form action="" method="post">
+  <form action="profile.php" method="post">
+
+    <h2>Update your personal information</h2>
+
   <?php
     if (isset($_REQUEST['updateinfo'])) {
 
@@ -34,15 +37,19 @@ $row = mysqli_fetch_array($result);
       if (!isset($result)) {
         die ("Something went wrong... Try again later.");
       } else {
-          echo    '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <h4>User information updated succesfully</h4>
-                    Your personal information has been updated. Refresh the page to see updated fields.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>';
+          header("Location:profile.php?update");
       }
 
+    }
+
+    if (isset($_GET['update'])) {
+      echo    '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <h4>User information updated succesfully</h4>
+                Your personal information has been updated.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>';
     }
   ?>
     <div class="form-group row">
@@ -96,6 +103,80 @@ $row = mysqli_fetch_array($result);
 
     <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
     <button type="submit" class="btn" name="updateinfo">Update information</button>
+
+  </form>
+
+  <hr>
+
+  <form action="profile.php" method="post">
+
+    <h2>Change your password</h2>
+
+    <?php
+
+    if (isset($_REQUEST['changepassword'])) {
+
+      $vanhasalasana = $_POST['old_password'];
+      $uusisalasana = $_POST['new_password'];
+
+      $query = "SELECT * FROM webneer_kayttajat WHERE id = ".$row['id'];
+      $result = mysqli_query($yhteys, $query);
+
+      while ($row = mysqli_fetch_assoc($result)) {
+        $id = $row['id'];
+        $hashed_password = $row['salasana'];
+      }
+
+      if (password_verify($vanhasalasana, $hashed_password)) {
+        if (password_needs_rehash($hashed_password, PASSWORD_DEFAULT)) {
+          $newHash = password_hash($salasana, PASSWORD_DEFAULT);
+        }
+        $hash_salasana = password_hash($uusisalasana, PASSWORD_DEFAULT);
+
+        $query = "UPDATE webneer_kayttajat SET salasana = ? WHERE id = '$id'";
+        $stmt = mysqli_prepare($yhteys, $query);
+        mysqli_stmt_bind_param($stmt, 's', $hash_salasana);
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
+        mysqli_close($yhteys);
+
+        echo    '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <h4>New password updated succesfully</h4>
+                  You can now use your new password.
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>';
+
+      } else {
+          echo  '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <h4>Something went wrong</h4>
+                  Please try again.
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>';
+      }
+    }
+
+    ?>
+
+    <div class="form-group row">
+      <label for="old_password" class="col-sm-2 col-form-label">Old password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" name="old_password" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="new_password" class="col-sm-2 col-form-label">New Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" name="new_password" required>
+      </div>
+    </div>
+
+    <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+    <button type="submit" class="btn" name="changepassword">Change password</button>
 
   </form>
 
