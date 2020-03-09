@@ -4,7 +4,7 @@ include 'lib/header.php';
 $sitename = "Feedback";
 
 
-if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){  
+if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){  //jos on laitettu ja ei oo tyhjä, poistaa tyhjät id:n alusta ja lopusta
     $sql = "SELECT * FROM webneer_yhteydenottolomake WHERE id = ?";
     
     if($stmt = mysqli_prepare($yhteys, $sql)){
@@ -12,12 +12,12 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
         mysqli_stmt_bind_param($stmt, "i", $id); 
         $id = trim($_GET["id"]);
            
-        if(mysqli_stmt_execute($stmt)){
-            $result = mysqli_stmt_get_result($stmt);
+        if(mysqli_stmt_execute($stmt)){ //toiminta
+            $result = mysqli_stmt_get_result($stmt); //tuloksen haku
     
-            if(mysqli_num_rows($result) == 1){
+            if(mysqli_num_rows($result) == 1){      //jos palautuneita rivejä on 1
                 
-                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);   //ottaa tuloksen luettavaan muotoon
                 
                 $etunimi = $row["etunimi"];
                 $sukunimi = $row["sukunimi"];
@@ -26,8 +26,8 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $puhnro = $row["puhnro"];
                 $sahkoposti = $row["sahkoposti"];
             } else{
-                header("location: error.php");
-                exit();
+                header("location: error.php");  //menee error-sivulle (jota ei ees oo :P)
+                exit();     //hommat loppuu vallan
             }
         } else{
             echo "Oops! Something went wrong. Please try again later.";

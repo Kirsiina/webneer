@@ -98,7 +98,7 @@
                   <form action="contact.php" method="post">
 
                   <?php
-                  if (isset($_REQUEST['submitbutton'])){
+                  if (isset($_REQUEST['submitbutton'])){    //jos submit-nappia painetaan, tapahtuu seuraavat jutut
                           $etunimi = $_POST['firstname'];
                           $sukunimi = $_POST['lastname'];
                           $aihe = $_POST['topic'];
@@ -109,8 +109,8 @@
                   
                           $sql = "INSERT INTO webneer_yhteydenottolomake(etunimi, sukunimi, aihe, lomake_txt, puhnro, sahkoposti) VALUES(?, ?, ?, ?, ?, ?)";
                           $stmt = mysqli_prepare($yhteys, $sql);
-                          mysqli_stmt_bind_param($stmt, "ssssss", $etunimi, $sukunimi, $aihe, $lomake_txt, $puhnro, $sahkoposti);
-                          mysqli_stmt_execute($stmt);
+                          mysqli_stmt_bind_param($stmt, "ssssss", $etunimi, $sukunimi, $aihe, $lomake_txt, $puhnro, $sahkoposti); //asetetaan oikeet oikeisiin
+                          mysqli_stmt_execute($stmt); //toiminta
                           
 
 
@@ -119,7 +119,7 @@
                           if($_POST["firstname"] !=null && $_POST["lastname"] !=null && $_POST["topic"] !=null && $_POST["message"] !=null && $_POST["phonenumber"] !=null && $_POST["email"]){
                             echo '<div class="alert alert-success" role="alert">
                             Your message was sent succesfully! We will contact you as soon as possible.
-                            </div>';
+                            </div>';    //jos kaikki kohdat on täytetty, tulee onnistumis-alertti
                           }
 
                           mysqli_stmt_close($stmt);

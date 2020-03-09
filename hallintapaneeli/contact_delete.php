@@ -4,7 +4,7 @@ include 'lib/header.php';
 $sitename = "DeleteContact";
 
 
-if(isset($_POST["id"]) && !empty($_POST["id"])){
+if(isset($_POST["id"]) && !empty($_POST["id"])){    //jos on laitettu ja ei oo tyhjä, poistaa tyhjät id:n alusta ja lopusta
     
     
     $sql = "DELETE FROM webneer_yhteydenottolomake WHERE id = ?";
@@ -16,12 +16,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         
         
         
-        if(mysqli_stmt_execute($stmt)){
+        if(mysqli_stmt_execute($stmt)){     //jos homma onnistuu niin..
             
             header("location: feedback.php");
             exit();
         } else{
-            echo "Oops! Something went wrong.";
+            echo "Oops! Something went wrong.";     //muuten tää näkyviin
         }
     }
      
@@ -32,7 +32,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     mysqli_close($yhteys);
 } else{
     
-    if(empty(trim($_GET["id"]))){
+    if(empty(trim($_GET["id"]))){       //jos id tyhjä, tulee error
         
         header("location: error.php");
         exit();

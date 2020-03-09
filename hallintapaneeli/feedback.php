@@ -8,7 +8,7 @@ $sitename = "Feedback";
         .page-header h2{
             margin-top: 0;
         }
-        table tr td:last-child a{
+        table tr td:last-child a{   /*viimesen solun muotoilu*/
             margin-right: 30px;
             
         }
@@ -28,14 +28,14 @@ $sitename = "Feedback";
                         <h2 class="pull-left">Contact requests</h2>
                     
                     </div>
+
+
+
                     <?php
                     
-                    
-                    
-                    
                     $sql = "SELECT * FROM webneer_yhteydenottolomake";
-                    if($result = mysqli_query($yhteys, $sql)){
-                        if(mysqli_num_rows($result) > 0){
+                    if($result = mysqli_query($yhteys, $sql)){  //jos löytyy tuloksia ni sit seuraavaan
+                        if(mysqli_num_rows($result) > 0){       //jos rivejä on enemmän ku yks ni sit muodostetaan taulukko
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
                                     echo "<tr>";
@@ -49,7 +49,7 @@ $sitename = "Feedback";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
-                                while($row = mysqli_fetch_array($result)){ //hae kaikki tiedot
+                                while($row = mysqli_fetch_array($result)){ //hakee kaikki tiedot per rivi
                                     echo "<tr>";
                                         echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['etunimi'] . "</td>";
@@ -67,7 +67,7 @@ $sitename = "Feedback";
                                         }
                                         echo "</tbody>";                            
                                     echo "</table>";
-                                    // muistin vapautus
+                                    
                                     
                                 } else{
                                     echo "<p class='lead'><em>No records were found.</em></p>";
