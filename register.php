@@ -35,7 +35,7 @@
         } else if (mysqli_num_rows($result_email) > 0) {
           echo    '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <h4>Email is already taken</h4>
-                    Did you <a href="#">forgot</a> your password?
+                    Did you <a href="forgotten-password.php">forgot</a> your password?
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -75,7 +75,7 @@
       <input type="password" class="form-control" name="password" placeholder="*****" required data-msg="Please enter your password">
     </div>
     <button class="btn" type="submit" name="register_btn">Sign up</button>
-    <p class="text-center small"><a href="#">Did you forget your password?</a> Or do you want to <a href="login.php">sign in</a>?</p>
+    <p class="text-center small"><a href="forgotten-password.php">Did you forget your password?</a> Or do you want to <a href="login.php">sign in</a>?</p>
   </form>
 
 </div>
