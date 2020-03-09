@@ -54,7 +54,7 @@
                                 <li class="">1GB <span class="text-muted">of storage</span></li>
                                 <li class="">200GB <span class="text-muted">monthly bandwidth</span></li>
                             </ul>
-                            <a name="" class="btn" href="#" role="button">Buy now</a>
+                            <a name="" class="btn" href="order.php" role="button">Buy now</a>
                         </div>
                     </div>
                     <!-- Package 2 -->
@@ -69,7 +69,7 @@
                                 <li class="">5GB <span class="text-muted">of storage</span></li>
                                 <li class="">500GB <span class="text-muted">monthly bandwidth</span></li>
                             </ul>
-                            <a name="" class="btn" href="#" role="button">Buy now</a>
+                            <a name="" class="btn" href="order.php" role="button">Buy now</a>
                         </div>
                     </div>
                     <!-- Package 3 -->
@@ -84,7 +84,7 @@
                                 <li class="">20GB <span class="text-muted">of storage</span></li>
                                 <li class="">1000GB <span class="text-muted">monthly bandwidth</span></li>
                             </ul>
-                            <a name="" class="btn" href="#" role="button">Buy now</a>
+                            <a name="" class="btn" href="order.php" role="button">Buy now</a>
 
                         </div>
                     </div>
