@@ -1,7 +1,7 @@
 <?php
 include 'lib/header.php';
 
-$sitename = "DeleteContact";
+$sitename = "Feedback";     //tämä aktiivisena ku ollaan täälä
 
 
 if(isset($_POST["id"]) && !empty($_POST["id"])){    //jos on laitettu ja ei oo tyhjä, poistaa tyhjät id:n alusta ja lopusta
